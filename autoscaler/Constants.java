@@ -1,7 +1,7 @@
 public class Constants {
 	
 	//Default Policy
-	public static final long COOLDOWN_PERIOD = 1000 * 180; //in miliseconds
+	public static final long COOLDOWN_PERIOD = 1000 * 210; //in miliseconds
 	public static final long DELAY = 40; //in seconds
 		
 	//Increase Policy
@@ -12,7 +12,7 @@ public class Constants {
 	
 	//Decrease Policy
 	public static final int DECR_POLICY_ID = 2;
-	public static final int DECR_POLICY_PERIOD = 60 * 5; //in seconds
+	public static final int DECR_POLICY_PERIOD = 60 * 4; //in seconds
 	public static final long DECR_DATAPOINTS_OFFSET = 1000 * ((DECR_POLICY_PERIOD * 2) + DELAY); //Max number of the last datapoints retrieved
 	public static final long DECR_POOLING_PERIOD = 1000 * DECR_POLICY_PERIOD; //in miliseconds
 
@@ -23,7 +23,7 @@ public class Constants {
 	public static final String SECGROUP_NAME = "CNV-ssh+http";
 	public static final int MAX_N_INSTANCES = 10;
 	public static final int MIN_N_INSTANCES = 1;
-	public static final double MAX_CPU_UTILIZATION = 65.0; //in percentage
+	public static final double MAX_CPU_UTILIZATION = 70.0; //in percentage
 	public static final double MIN_CPU_UTILIZATION = 30.0; //in percentage
 	
 }
