@@ -84,8 +84,8 @@ public class DecreaseGroupPolicy extends ScalePolicy{
 			}
 		}
 		//Pause pooling for 1 minute
-		System.out.println("Waiting: " + Constants.DECR_POOLING_PERIOD +" miliseconds for the next pooling.");
-		getPolicyTimer(policyId).schedule(new DecreaseGroupPolicy(policyId), new Date(new Date().getTime() + Constants.DECR_POOLING_PERIOD));
+		System.out.println("Waiting: " + Constants.DECR_COOLDOWN_PERIOD +" miliseconds for the next pooling.");
+		getPolicyTimer(policyId).schedule(new DecreaseGroupPolicy(policyId), new Date(new Date().getTime() + Constants.DECR_COOLDOWN_PERIOD));
 	}
 }
 	

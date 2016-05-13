@@ -24,7 +24,7 @@ public abstract class ScalePolicy extends TimerTask{
 	}
 	
 	protected void cooldownAllPolicyTasks(){
-		System.out.println("Coolling down for : " + Constants.COOLDOWN_PERIOD +" miliseconds.");
+		System.out.println("Coolling down for : " + Constants.GRACE_PERIOD +" miliseconds.");
 		for(Map.Entry e : ScalePolicy.policyTimers.entrySet()){
 			Integer policyId = (Integer)e.getKey();
 			Timer oldTimer = (Timer)e.getValue();
@@ -32,12 +32,12 @@ public abstract class ScalePolicy extends TimerTask{
 			Timer newTimer = new Timer();
 			policyTimers.replace(policyId, oldTimer, newTimer);
 			if(policyId == Constants.INCR_POLICY_ID){
-				System.out.println("INCR POLICY SCHEDULED");
-				newTimer.schedule(new IncreaseGroupPolicy(policyId), new Date(new Date().getTime() + Constants.COOLDOWN_PERIOD));
+				//System.out.println("INCR POLICY RESCHEDULED");
+				newTimer.schedule(new IncreaseGroupPolicy(policyId), new Date(new Date().getTime() + Constants.GRACE_PERIOD));
 			}
 			else if(policyId == Constants.DECR_POLICY_ID){
-				System.out.println("DECRE POLICY SCHEDULED");
-				newTimer.schedule(new DecreaseGroupPolicy(policyId), new Date(new Date().getTime() + Constants.COOLDOWN_PERIOD));
+				//System.out.println("DECRE POLICY RESCHEDULED");
+				newTimer.schedule(new DecreaseGroupPolicy(policyId), new Date(new Date().getTime() + Constants.GRACE_PERIOD));
 			}
 		}
 	}

@@ -1,20 +1,20 @@
 public class Constants {
 	
 	//Default Policy
-	public static final long COOLDOWN_PERIOD = 1000 * 210; //in miliseconds
+	public static final long GRACE_PERIOD = 1000 * 60 * 3; //in miliseconds
 	public static final long DELAY = 40; //in seconds
 		
 	//Increase Policy
 	public static final int INCR_POLICY_ID = 1;
 	public static final int INCR_POLICY_PERIOD = 60 * 1; //in seconds
 	public static final long INCR_DATAPOINTS_OFFSET = 1000 * ((INCR_POLICY_PERIOD * 2) + DELAY); //Max number of the last datapoints retrieved
-	public static final long INCR_POOLING_PERIOD = 1000 * INCR_POLICY_PERIOD; //in miliseconds
+	public static final long INCR_COOLDOWN_PERIOD = 1000 * INCR_POLICY_PERIOD; //in miliseconds
 	
 	//Decrease Policy
 	public static final int DECR_POLICY_ID = 2;
 	public static final int DECR_POLICY_PERIOD = 60 * 4; //in seconds
 	public static final long DECR_DATAPOINTS_OFFSET = 1000 * ((DECR_POLICY_PERIOD * 2) + DELAY); //Max number of the last datapoints retrieved
-	public static final long DECR_POOLING_PERIOD = 1000 * DECR_POLICY_PERIOD; //in miliseconds
+	public static final long DECR_COOLDOWN_PERIOD = 1000 * DECR_POLICY_PERIOD; //in miliseconds
 
 	
 	//AutoScaler

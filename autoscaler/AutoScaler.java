@@ -130,11 +130,11 @@ public class AutoScaler {
 			//Schedule Scaling Policies
 			Timer t1 = new Timer();
 			ScalePolicy.policyTimers.put(Constants.INCR_POLICY_ID, t1);
-			t1.schedule(increasePolicy, new Date(new Date().getTime() + Constants.INCR_POOLING_PERIOD));
+			t1.schedule(increasePolicy, new Date(new Date().getTime() + Constants.GRACE_PERIOD));
 			
 			Timer t2 = new Timer();
 			ScalePolicy.policyTimers.put(Constants.DECR_POLICY_ID, t2);
-			t2.schedule(decreasePolicy, new Date(new Date().getTime() + Constants.DECR_POOLING_PERIOD));
+			t2.schedule(decreasePolicy, new Date(new Date().getTime() + Constants.GRACE_PERIOD));
 			
 			
         } catch (AmazonServiceException ase) {
